@@ -13,7 +13,7 @@ app.use(express.urlencoded({
 app.use(express.json());
 app.use('/', routes);
 
-mongoose.connect(process.env.MONGODB_URI, {
+mongoose.connect("process.env.MONGODB_URI", {
     useNewUrlParser: true
 });
 
