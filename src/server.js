@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const routes = require('routes');
 const path = require('path');
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 require('dotenv').config();
 
 const app = express();
@@ -13,8 +13,8 @@ app.use(express.urlencoded({
 app.use(express.json());
 app.use('/', routes);
 
-mongoose.connect("process.env.MONGODB_URI", {
-    useNewUrlParser: true
+mongoose.connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true, useUnifiedTopology: true 
 });
 
 mongoose.connection.once('open', () => {
