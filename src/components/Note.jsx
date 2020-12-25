@@ -21,8 +21,7 @@ function Note(){
     }
 
     return (
-    <div>
-        
+    <div>      
         <div>
         {notes.map((item, index)=>(
             <ToDoItem 

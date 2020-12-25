@@ -9,15 +9,22 @@ const app = express();
 const publicPath = path.join(__dirname, '..', 'public');
 app.use(express.static(publicPath));
 
-app.get('*', (req, res) =>{
+app.get('*', (req, res) => {
     res.sendFile(path.join(publicPath, 'index.html'));
+    console.log("Successfully connected to the server.");
 })
 
 app.use(express.urlencoded({
     extended: true
 }));
 
-const uri = process.env.MONGODB_URI;
+app.listen(PORT, () => {
+    console.log(`Server listening on port ${PORT}.`);
+  });
+
+
+
+// const uri = process.env.MONGODB_URI;
 
 // mongoose.connect(uri, {
 //     useNewUrlParser: true, useUnifiedTopology: true 
@@ -31,6 +38,3 @@ const uri = process.env.MONGODB_URI;
 //     console.log('Mongoose Connection Error : ' + err);
 // });
 
-app.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT}.`);
-  });
