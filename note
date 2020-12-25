@@ -1,0 +1,4 @@
+to depoly the app see this website
+https://medium.com/better-programming/how-to-deploy-your-react-app-to-heroku-aedc28b218ae
+
+the only difference is to replace the public to build in the server file
