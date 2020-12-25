@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 const PORT = process.env.PORT || 3000;
 require('dotenv').config();
 
@@ -19,17 +19,17 @@ app.use(express.urlencoded({
 
 const uri = process.env.MONGODB_URI;
 
-mongoose.connect(uri, {
-    useNewUrlParser: true, useUnifiedTopology: true 
-});
+// mongoose.connect(uri, {
+//     useNewUrlParser: true, useUnifiedTopology: true 
+// });
 
-mongoose.connection.once('open', () => {
-    console.log('Connected to the Database.');
-});
+// mongoose.connection.once('open', () => {
+//     console.log('Connected to the Database.');
+// });
 
-mongoose.connection.on('error', err => {
-    console.log('Mongoose Connection Error : ' + err);
-});
+// mongoose.connection.on('error', err => {
+//     console.log('Mongoose Connection Error : ' + err);
+// });
 
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}.`);
