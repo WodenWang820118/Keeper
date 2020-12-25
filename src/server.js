@@ -13,7 +13,7 @@ app.use(express.urlencoded({
 app.use(express.json());
 app.use('/api', router);
 
-mongoose.connect("mongodb+srv://GuanXin:alex820118@cluster0.9qljn.mongodb.net/keeperDB", {
+mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true
 });
 
