@@ -1,6 +1,10 @@
 {
   "name": "keeper-app-part-1-starting",
   "version": "1.0.0",
+  "engines": {
+    "npm": "6.14.8",
+    "node": "14.15.1"
+  },
   "homepage": ".",
   "description": "the basic interface of notes keeping",
   "keywords": [],
