@@ -1,7 +1,10 @@
 {
   "name": "keeper-app-part-1-starting",
   "version": "1.0.0",
-  "description": "",
+  "description": "a APP that takes note",
+  "engine":{
+    "node":"14.15"
+  },
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
@@ -22,8 +25,7 @@
     "start": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "cd keeper && npm install && npm run build"
+    "eject": "react-scripts eject"
   },
   "browserslist": [
     ">0.2%",
