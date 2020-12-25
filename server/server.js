@@ -1,6 +1,4 @@
 const express = require('express');
-const mongoose = require('mongoose');
-const routes = require('routes');
 const path = require('path');
 const PORT = process.env.PORT || 3000;
 require('dotenv').config();
@@ -17,8 +15,6 @@ app.get('*', (req, res) =>{
 app.use(express.urlencoded({
     extended: true
 }));
-app.use(express.json());
-app.use('/', routes);
 
 const uri = process.env.MONGODB_URI;
 
