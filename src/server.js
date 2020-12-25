@@ -19,7 +19,7 @@ app.use(express.urlencoded({
 
 const uri = process.env.MONGODB_URI;
 
-mongoose.connect("mongodb://localhost:27017/keeperDB", {
+mongoose.connect(uri, {
     useNewUrlParser: true, useUnifiedTopology: true 
 });
 
