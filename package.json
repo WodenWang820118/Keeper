@@ -2,8 +2,8 @@
   "name": "keeper-app-part-1-starting",
   "version": "1.0.0",
   "description": "a APP that takes note",
-  "engine":{
-    "node":"14.15"
+  "engine": {
+    "node": "14.15"
   },
   "keywords": [],
   "main": "src/index.js",
@@ -16,7 +16,8 @@
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "routes": "^2.1.0"
   },
   "devDependencies": {
     "typescript": "3.3.3"
