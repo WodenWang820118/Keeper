@@ -7,13 +7,22 @@ require('dotenv').config();
 
 const app = express();
 
+const publicPath = path.join(__dirname, '..', 'public');
+app.use(expres.static(publicPath));
+
+app.get('*', (req, res) =>{
+    res.sendFile(path.join(publicPath, 'index.html'));
+})
+
 app.use(express.urlencoded({
     extended: true
 }));
 app.use(express.json());
 app.use('/', routes);
 
-mongoose.connect(process.env.MONGODB_URI, {
+const uri = process.env.MONGODB_URI;
+
+mongoose.connect("mongodb://localhost:27017/keeperDB", {
     useNewUrlParser: true, useUnifiedTopology: true 
 });
 
@@ -24,17 +33,6 @@ mongoose.connection.once('open', () => {
 mongoose.connection.on('error', err => {
     console.log('Mongoose Connection Error : ' + err);
 });
-
-if (process.env.NODE_ENV === 'production') {
-
-    app.use(express.static('keeper/components'));
-
-  
-
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'keeper', 'components', 'index.html'));
-    });
-}
 
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}.`);
